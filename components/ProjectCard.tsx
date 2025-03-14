@@ -17,8 +17,8 @@ type ProjectCardProps = {
   description: string;
   image: string;
   technologies: string[];
-  demoLink: string;
-  codeLink: string;
+  demoLink?: string;
+  codeLink?: string;
   comingSoon?: boolean;
 };
 
@@ -83,22 +83,26 @@ const ProjectCard = ({
           <p className="mt-4 text-sm text-muted-foreground">{description}</p>
         </CardContent>
         <CardFooter className="flex justify-between">
-          <Button variant="outline" size="sm" asChild disabled={comingSoon}>
-            <Link
-              href={comingSoon ? "#" : demoLink}
-              target={comingSoon ? "_self" : "_blank"}
-            >
-              Demo <PlayIcon />
-            </Link>
-          </Button>
-          <Button variant="outline" size="sm" asChild disabled={comingSoon}>
-            <Link
-              href={comingSoon ? "#" : codeLink}
-              target={comingSoon ? "_self" : "_blank"}
-            >
-              Code <Code />
-            </Link>
-          </Button>
+          {!!demoLink && (
+            <Button variant="outline" size="sm" asChild disabled={comingSoon}>
+              <Link
+                href={comingSoon ? "#" : demoLink}
+                target={comingSoon ? "_self" : "_blank"}
+              >
+                Demo <PlayIcon />
+              </Link>
+            </Button>
+          )}
+          {!!codeLink && (
+            <Button variant="outline" size="sm" asChild disabled={comingSoon}>
+              <Link
+                href={comingSoon ? "#" : codeLink}
+                target={comingSoon ? "_self" : "_blank"}
+              >
+                Code <Code />
+              </Link>
+            </Button>
+          )}
         </CardFooter>
       </Card>
     </motion.div>

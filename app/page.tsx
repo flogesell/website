@@ -31,9 +31,25 @@ import {
   ExternalLink,
   Instagram,
 } from "lucide-react";
-
-import AngularLogo from "/public/logos/angular_gradient.png";
 import ProjectCard from "../components/ProjectCard";
+
+import AngularLogo from "/public/logos/angular.png";
+import ReactLogo from "/public/logos/react.png";
+import ReactNativeLogo from "/public/logos/react-native.svg";
+import CssLogo from "/public/logos/css.webp";
+import HtmlLogo from "/public/logos/html.png";
+import JsLogo from "/public/logos/javascript.png";
+import TypescriptLogo from "/public/logos/typescript.svg";
+import NextJsLogo from "/public/logos/nextjs.svg";
+import IonicLogo from "/public/logos/ionic.png";
+import TailwindLogo from "/public/logos/tailwind-css.svg";
+import GitLogo from "/public/logos/git.png";
+import DockerLogo from "/public/logos/docker.png";
+import AppStoreConnectLogo from "/public/logos/app-store-connect.png";
+import FirebaseLogo from "/public/logos/firebase.png";
+import GooglePlayConsoleLogo from "/public/logos/google-play-console.png";
+import FigmaLogo from "/public/logos/figma.png";
+import NodeLogo from "/public/logos/node.png";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -193,7 +209,7 @@ export default function Home() {
                       className="text-lg font-medium py-2 border-b border-border"
                       onClick={(e) => scrollToSection(e, "contact")}
                     >
-                      Contact
+                      Let's Connect
                     </Link>
                   </nav>
                   <div className="mt-auto pt-6">
@@ -267,7 +283,7 @@ export default function Home() {
                 onClick={(e) => scrollToSection(e, "contact")}
                 className="px-4 py-2 text-sm font-medium transition-colors hover:text-primary"
               >
-                Contact
+                Let's Connect
               </Link>
             </nav>
           </motion.div>
@@ -386,21 +402,21 @@ export default function Home() {
                     {[
                       {
                         name: "JavaScript",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: JsLogo,
                       },
                       {
                         name: "TypeScript",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: TypescriptLogo,
                       },
                       {
                         name: "HTML",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: HtmlLogo,
                         disclaimer:
                           "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
                       },
                       {
                         name: "CSS",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: CssLogo,
                         disclaimer:
                           "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
                       },
@@ -420,7 +436,7 @@ export default function Home() {
                             width={48}
                             height={48}
                             alt={lang.name}
-                            className="h-10 w-10 object-contain grayscale"
+                            className="h-10 w-10 object-contain "
                           />
 
                           {lang.disclaimer && (
@@ -452,15 +468,15 @@ export default function Home() {
                     {[
                       {
                         name: "React",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: ReactLogo,
                       },
                       {
                         name: "Next.js",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: NextJsLogo,
                       },
                       {
                         name: "React Native",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: ReactNativeLogo,
                       },
                       {
                         name: "Angular",
@@ -468,19 +484,11 @@ export default function Home() {
                       },
                       {
                         name: "Ionic",
-                        logo: "/placeholder.svg?height=80&width=80",
-                      },
-                      {
-                        name: "Django",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: IonicLogo,
                       },
                       {
                         name: "TailwindCSS",
-                        logo: "/placeholder.svg?height=80&width=80",
-                      },
-                      {
-                        name: "Bootstrap",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: TailwindLogo,
                       },
                     ].map((framework) => (
                       <motion.div
@@ -518,38 +526,38 @@ export default function Home() {
                     {[
                       {
                         name: "Git",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: GitLogo,
                       },
                       {
                         name: "Docker",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: DockerLogo,
                       },
                       {
                         name: "Node.js",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: NodeLogo,
                       },
                       {
                         name: "Firebase",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: FirebaseLogo,
                       },
                       {
                         name: "App Store Connect",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: AppStoreConnectLogo,
                       },
                       {
                         name: "Google Play Console",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: GooglePlayConsoleLogo,
                       },
                       {
                         name: "Figma",
-                        logo: "/placeholder.svg?height=80&width=80",
+                        logo: FigmaLogo,
                       },
                     ].map((tool) => (
                       <motion.div
                         key={tool.name}
                         variants={fadeIn}
                         whileHover={{ y: -5 }}
-                        className="flex flex-col items-center"
+                        className="flex flex-col items-center max-w-16 sm:max-w-20"
                       >
                         <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg border border-border bg-card p-3 sm:p-4 flex items-center justify-center shadow-sm">
                           <Image
@@ -557,7 +565,7 @@ export default function Home() {
                             width={48}
                             height={48}
                             alt={tool.name}
-                            className="h-10 w-10 object-contain grayscale"
+                            className="h-10 w-10 object-contain"
                           />
                         </div>
                         <span className="mt-2 text-xs sm:text-sm font-medium">
@@ -601,8 +609,7 @@ export default function Home() {
                     "Tailwind CSS",
                     "Supabase",
                   ]}
-                  demoLink="#"
-                  codeLink="#"
+                  demoLink="https://lunchleague.de/"
                 />
                 <ProjectCard
                   comingSoon
@@ -739,6 +746,7 @@ export default function Home() {
                       <motion.a
                         key={social.name}
                         href={social.link}
+                        target="_blank"
                         whileHover={{
                           scale: 1.05,
                           rotate: 2,
