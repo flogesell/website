@@ -8,14 +8,14 @@ import {
   CardFooter,
 } from "./ui/card";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { Button } from "./ui/button";
 import { motion, Variants } from "framer-motion";
 
 type ProjectCardProps = {
   title: string;
   description: string;
-  image: string;
+  image: StaticImageData | string;
   technologies: string[];
   demoLink?: string;
   codeLink?: string;

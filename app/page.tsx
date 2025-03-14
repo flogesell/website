@@ -33,6 +33,8 @@ import {
 } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 
+import Me from "/public/me.jpg";
+import LunchLeagueLogo from "/public/lunchleague.png";
 import AngularLogo from "/public/logos/angular.png";
 import ReactLogo from "/public/logos/react.png";
 import ReactNativeLogo from "/public/logos/react-native.svg";
@@ -343,10 +345,10 @@ export default function Home() {
                 className="mx-auto lg:mx-0 max-w-[400px] lg:max-w-none"
               >
                 <Image
-                  src="/placeholder.svg?height=550&width=550"
+                  src={Me}
                   width={550}
                   height={550}
-                  alt="Developer portrait"
+                  alt="Portrait of Flo Gesell"
                   className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 />
               </motion.div>
@@ -602,7 +604,7 @@ export default function Home() {
                 <ProjectCard
                   title="LunchLeague"
                   description="Apps to challenge you colleagues in competitive games like Fifa, Mario Kart, and more! Also created the online website with colleagues to manage the leagues and tournaments."
-                  image="/placeholder.svg?height=200&width=400"
+                  image={LunchLeagueLogo}
                   technologies={[
                     "Next.js",
                     "React Native",
