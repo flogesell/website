@@ -43,6 +43,7 @@ import FirebaseLogo from "/public/logos/firebase.png";
 import GooglePlayConsoleLogo from "/public/logos/google-play-console.png";
 import FigmaLogo from "/public/logos/figma.png";
 import NodeLogo from "/public/logos/node.png";
+import ShutdownLogo from "/public/shutdown.png";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -624,14 +625,11 @@ export default function Home() {
                 />
                 <ProjectCard
                   title="shutdown"
-                  description="Apps to challenge you colleagues in competitive games like Fifa, Mario Kart, and more! Also created the online website with colleagues to manage the leagues and tournaments."
-                  image="/placeholder.svg?height=200&width=400"
-                  technologies={[
-                    "Next.js",
-                    "React Native",
-                    "Tailwind CSS",
-                    "Supabase",
-                  ]}
+                  description="Shutdown is a visualisation of the effects of everydays life on the climate change goals. The user can shutdown entire emission categories to see the impact on the climate change goals."
+                  technologies={["Vue", "SASS"]}
+                  image={ShutdownLogo}
+                  demoLink="https://flogesell.github.io/shutdown/"
+                  codeLink="https://github.com/flogesell/shutdown"
                 />
               </motion.div>
             </div>
