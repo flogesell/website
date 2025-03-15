@@ -8,14 +8,6 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useAnimation, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
   Sheet,
   SheetContent,
   SheetTitle,
@@ -27,7 +19,6 @@ import {
   Mail,
   Menu,
   Twitter,
-  DoorClosedIcon as CloseIcon,
   ExternalLink,
   Instagram,
 } from "lucide-react";
@@ -133,23 +124,25 @@ export default function Home() {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      const headerOffset = 65;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition =
-        elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
       // Close mobile menu if open
       setIsOpen(false);
+
+      // Use setTimeout to ensure the menu is closed before scrolling
+      setTimeout(() => {
+        const headerOffset = 65;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }, 100);
     }
   };
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 justify-center flex">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <motion.div
@@ -238,7 +231,7 @@ export default function Home() {
                         <span className="sr-only">Twitter</span>
                       </Link>
                       <Link
-                        href="mailto:mail@flogesell.de"
+                        href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}
                         className="text-muted-foreground hover:text-foreground"
                       >
                         <Mail className="h-6 w-6" />
@@ -345,7 +338,7 @@ export default function Home() {
                 className="mx-auto lg:mx-0 max-w-[400px] lg:max-w-none"
               >
                 <Image
-                  src={Me}
+                  src={Me || "/placeholder.svg"}
                   width={550}
                   height={550}
                   alt="Portrait of Flo Gesell"
@@ -399,7 +392,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
                   >
                     {[
                       {
@@ -465,7 +458,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
                   >
                     {[
                       {
@@ -523,7 +516,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
                   >
                     {[
                       {
@@ -599,7 +592,7 @@ export default function Home() {
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-                className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full"
+                className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full"
               >
                 <ProjectCard
                   title="LunchLeague"
@@ -714,7 +707,7 @@ export default function Home() {
                   transition={{ duration: 0.7, delay: 0.4 }}
                   className="relative"
                 >
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4 max-w-full">
                     {[
                       {
                         name: "GitHub",
@@ -742,7 +735,7 @@ export default function Home() {
                         icon: Mail,
                         color: "bg-primary/10",
                         textColor: "text-primary",
-                        link: "mailto:mail@flogesell.de",
+                        link: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
                       },
                     ].map((social) => (
                       <motion.a
@@ -755,17 +748,20 @@ export default function Home() {
                           transition: { duration: 0.2 },
                         }}
                         whileTap={{ scale: 0.95 }}
-                        className={`flex flex-col items-center justify-center p-6 rounded-xl ${social.color} backdrop-blur-sm border border-border/30 transition-all duration-300 hover:shadow-lg group`}
+                        className={`flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl ${social.color} backdrop-blur-sm border border-border/30 transition-all duration-300 hover:shadow-lg group`}
+                        rel="noreferrer"
                       >
                         <social.icon
-                          className={`h-10 w-10 mb-3 ${social.textColor} group-hover:scale-110 transition-transform duration-300`}
+                          className={`h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 ${social.textColor} group-hover:scale-110 transition-transform duration-300`}
                         />
-                        <span className={`font-medium ${social.textColor}`}>
+                        <span
+                          className={`font-medium text-sm sm:text-base ${social.textColor}`}
+                        >
                           {social.name}
                         </span>
-                        <div className="flex items-center mt-2 text-xs text-muted-foreground">
+                        <div className="flex items-center mt-1 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground">
                           <span>Connect</span>
-                          <ExternalLink className="h-3 w-3 ml-1" />
+                          <ExternalLink className="h-2 w-2 sm:h-3 sm:w-3 ml-1" />
                         </div>
                       </motion.a>
                     ))}
@@ -796,16 +792,16 @@ export default function Home() {
           </p>
           <div className="flex gap-4">
             <Link
-              href="#"
+              href="/datenschutz"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"
             >
               Privacy Policy
             </Link>
             <Link
-              href="#"
+              href="/impressum"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"
             >
-              Terms of Service
+              Legal Notice
             </Link>
           </div>
         </div>
