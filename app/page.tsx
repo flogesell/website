@@ -313,6 +313,7 @@ export default function Home() {
                   >
                     <Link
                       href="#"
+                      data-umami-event="Scroll to Contact"
                       onClick={(e) => scrollToSection(e, "contact")}
                     >
                       <Button>Let's connect</Button>
@@ -324,6 +325,7 @@ export default function Home() {
                   >
                     <Link
                       href="#"
+                      data-umami-event="Scroll to Projects"
                       onClick={(e) => scrollToSection(e, "projects")}
                     >
                       <Button variant="outline">View my work</Button>
@@ -392,7 +394,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-visible"
                   >
                     {[
                       {
@@ -458,7 +460,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-visible"
                   >
                     {[
                       {
@@ -516,7 +518,7 @@ export default function Home() {
                     variants={staggerContainer}
                     initial="hidden"
                     animate="visible"
-                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-hidden"
+                    className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 max-w-full overflow-visible"
                   >
                     {[
                       {
@@ -619,7 +621,6 @@ export default function Home() {
                     "shadcn/ui",
                   ]}
                   demoLink="#"
-                  codeLink="#"
                 />
                 <ProjectCard
                   title="shutdown"
@@ -631,8 +632,6 @@ export default function Home() {
                     "Tailwind CSS",
                     "Supabase",
                   ]}
-                  demoLink="#"
-                  codeLink="#"
                 />
               </motion.div>
             </div>
@@ -740,6 +739,7 @@ export default function Home() {
                     ].map((social) => (
                       <motion.a
                         key={social.name}
+                        data-umami-event={`Open Social Media ${social.name}`}
                         href={social.link}
                         target="_blank"
                         whileHover={{
@@ -792,12 +792,14 @@ export default function Home() {
           </p>
           <div className="flex gap-4">
             <Link
+              data-umami-event="Open Datenschutz"
               href="/datenschutz"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"
             >
               Privacy Policy
             </Link>
             <Link
+              data-umami-event="Open Impressum"
               href="/impressum"
               className="text-sm text-muted-foreground underline-offset-4 hover:underline"
             >

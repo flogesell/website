@@ -86,6 +86,7 @@ const ProjectCard = ({
           {!!demoLink && (
             <Button variant="outline" size="sm" asChild disabled={comingSoon}>
               <Link
+                data-umami-event={`Open Demo ${title}`}
                 href={comingSoon ? "#" : demoLink}
                 target={comingSoon ? "_self" : "_blank"}
               >
@@ -96,6 +97,7 @@ const ProjectCard = ({
           {!!codeLink && (
             <Button variant="outline" size="sm" asChild disabled={comingSoon}>
               <Link
+                data-umami-event={`Open Code ${title}`}
                 href={comingSoon ? "#" : codeLink}
                 target={comingSoon ? "_self" : "_blank"}
               >

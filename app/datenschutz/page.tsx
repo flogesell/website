@@ -248,60 +248,41 @@ export default function Datenschutz() {
           </p>
         </section>
 
-        {/* <section>
+        <section>
           <h2 className="text-xl font-semibold text-foreground mb-4">
-            5. Plugins und Tools
+            5. Analyse- und Tracking Tools
           </h2>
+          <p>
+            Die im Folgenden aufgeführte und von uns eingesetzte Analyse- und
+            Tracking-Maßnahme (nachfolgend „Maßnahme“) wird auf Grundlage des
+            Art. 6 Abs. 1 S. 1 lit. f DSGVO durchgeführt. Mit der zum Einsatz
+            kommenden Maßnahme wollen wir eine bedarfsgerechte Gestaltung und
+            die fortlaufende Optimierung unserer Webseite sicherstellen. Zum
+            anderen setzen wir die Maßnahme ein, um die Nutzung unserer Webseite
+            statistisch zu erfassen und zum Zwecke der Optimierung unseres
+            Webangebotes für Sie auszuwerten. Diese Interessen sind als
+            berechtigt im Sinne der vorgenannten Vorschrift anzusehen.
+          </p>
+          <p>
+            Die jeweiligen Datenverarbeitungszwecke und Datenkategorien sind den
+            nachfolgenden Informationen zu entnehmen.
+          </p>
 
           <h3 className="text-lg font-medium text-foreground mt-6 mb-3">
-            Google Fonts
+            Umami
           </h3>
           <p>
-            Diese Seite nutzt zur einheitlichen Darstellung von Schriftarten so
-            genannte Google Fonts, die von Google bereitgestellt werden. Beim
-            Aufruf einer Seite lädt Ihr Browser die benötigten Fonts in ihren
-            Browsercache, um Texte und Schriftarten korrekt anzuzeigen.
+            Zu Analyse der Reichweite meiner Website benutzen wir Umami. Der
+            Schutz Ihrer Daten ist uns wichtig. Deshalb erfasst Umami keine IP
+            Adresse und speichert keine Informationen auf Ihrem Endgerät (z.B.
+            Cookies). Wir verarbeiten Ihre personenbezogenen Nutzungsdaten nur
+            anonymisiert. Ein Rückschluss auf Ihre Person ist uns nicht möglich.
+            Darüber hinaus betreiben wir Umami auf unseren eigenen Servern,
+            weswegen eine Weiterleitung der Daten an Dritte nicht erfolgt.
+            Weitere Informationen finden Sie in der Dokumentation für Umami
+            Analytics unter: https://umami.is .
           </p>
-          <p>
-            Zu diesem Zweck muss der von Ihnen verwendete Browser Verbindung zu
-            den Servern von Google aufnehmen. Hierdurch erlangt Google Kenntnis
-            darüber, dass über Ihre IP-Adresse diese Website aufgerufen wurde.
-            Die Nutzung von Google Fonts erfolgt auf Grundlage von Art. 6 Abs. 1
-            lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an
-            der einheitlichen Darstellung des Schriftbildes auf seiner Website.
-            Sofern eine entsprechende Einwilligung abgefragt wurde, erfolgt die
-            Verarbeitung ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a
-            DSGVO und § 25 Abs. 1 TTDSG, soweit die Einwilligung die Speicherung
-            von Cookies oder den Zugriff auf Informationen im Endgerät des
-            Nutzers (z. B. Device-Fingerprinting) im Sinne des TTDSG umfasst.
-            Die Einwilligung ist jederzeit widerrufbar.
-          </p>
-          <p>
-            Wenn Ihr Browser Google Fonts nicht unterstützt, wird eine
-            Standardschrift von Ihrem Computer genutzt.
-          </p>
-          <p>
-            Weitere Informationen zu Google Fonts finden Sie unter{" "}
-            <a
-              href="https://developers.google.com/fonts/faq"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              https://developers.google.com/fonts/faq
-            </a>{" "}
-            und in der Datenschutzerklärung von Google:{" "}
-            <a
-              href="https://policies.google.com/privacy?hl=de"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline"
-            >
-              https://policies.google.com/privacy?hl=de
-            </a>
-            .
-          </p>
-        </section> */}
+        </section>
       </div>
     </div>
   );

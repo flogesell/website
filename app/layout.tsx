@@ -20,7 +20,7 @@ export default function RootLayout({
         strategy="afterInteractive"
         async
         src="/stats/script.js"
-        data-website-id="56d98434-216d-48f3-bdcf-237c510839ba"
+        data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
       />
       <body>{children}</body>
     </html>
