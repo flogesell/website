@@ -17,6 +17,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  rewrites: () => [
+    {
+      source: "/stats/:path*",
+      destination: "https://umami.flogesell.de/:path*",
+    },
+  ],
   experimental: {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,

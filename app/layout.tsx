@@ -15,13 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <Script
-          defer
-          src="https://umami.flogesell.de/script.js"
-          data-website-id="56d98434-216d-48f3-bdcf-237c510839ba"
-        ></Script>
-      </Head>
+      <Script
+        defer
+        strategy="afterInteractive"
+        async
+        src="/stats/script.js"
+        data-website-id="56d98434-216d-48f3-bdcf-237c510839ba"
+      />
       <body>{children}</body>
     </html>
   );
