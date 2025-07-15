@@ -303,7 +303,7 @@ export default function Home() {
                     Hi, I'm Florian
                   </h1>
                   <p className="mx-auto lg:mx-0 max-w-[600px] text-muted-foreground md:text-xl">
-                    Full-stack web developer specializing in building
+                    Full-stack web & app developer specializing in building
                     exceptional digital experiences.
                   </p>
                 </div>
@@ -601,6 +601,7 @@ export default function Home() {
                   title="LunchLeague"
                   description="Apps to challenge you colleagues in competitive games like Fifa, Mario Kart, and more! Also created the online website with colleagues to manage the leagues and tournaments."
                   image={LunchLeagueLogo}
+                  demoText="Website"
                   technologies={[
                     "Next.js",
                     "React Native",

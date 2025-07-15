@@ -20,6 +20,7 @@ type ProjectCardProps = {
   demoLink?: string;
   codeLink?: string;
   comingSoon?: boolean;
+  demoText?: string;
 };
 
 const cardVariants: Variants = {
@@ -42,6 +43,7 @@ const ProjectCard = ({
   image,
   technologies,
   demoLink,
+  demoText,
   codeLink,
   comingSoon = false,
 }: ProjectCardProps) => {
@@ -90,7 +92,7 @@ const ProjectCard = ({
                 href={comingSoon ? "#" : demoLink}
                 target={comingSoon ? "_self" : "_blank"}
               >
-                Demo <PlayIcon />
+                {demoText || "Demo"} <PlayIcon />
               </Link>
             </Button>
           )}
