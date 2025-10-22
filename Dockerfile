@@ -11,7 +11,10 @@ WORKDIR /app
 # Install dependencies based on the preferred package manager
 COPY package.json bun.lock* yarn.lock* package-lock.json* .npmrc* ./
 RUN \
-  if [ -f bun.lock ]; then curl -fsSL https://bun.sh/install | bash && /root/.bun/bin/bun install --frozen-lockfile; \
+  if [ -f bun.lock ]; then \
+    apk add --no-cache curl bash && \
+    curl -fsSL https://bun.sh/install | bash && \
+    /root/.bun/bin/bun install --frozen-lockfile; \
   elif [ -f yarn.lock ]; then yarn --frozen-lockfile; \
   elif [ -f package-lock.json ]; then npm ci; \
   else echo "Lockfile not found." && exit 1; \
@@ -30,7 +33,10 @@ COPY . .
 # ENV NEXT_TELEMETRY_DISABLED=1
 
 RUN \
-  if [ -f bun.lock ]; then curl -fsSL https://bun.sh/install | bash && /root/.bun/bin/bun run build; \
+  if [ -f bun.lock ]; then \
+    apk add --no-cache curl bash && \
+    curl -fsSL https://bun.sh/install | bash && \
+    /root/.bun/bin/bun run build; \
   elif [ -f yarn.lock ]; then yarn run build; \
   elif [ -f package-lock.json ]; then npm run build; \
   else echo "Lockfile not found." && exit 1; \
