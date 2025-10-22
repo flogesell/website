@@ -22,6 +22,7 @@ RUN \
 
 # Rebuild the source code only when needed
 FROM base AS builder
+RUN apk add --no-cache curl bash
 WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -33,7 +34,6 @@ COPY . .
 
 RUN \
   if [ -f bun.lock ]; then \
-    apk add --no-cache curl bash && \
     curl -fsSL https://bun.sh/install | bash && \
     /root/.bun/bin/bun run build; \
   elif [ -f yarn.lock ]; then yarn run build; \
