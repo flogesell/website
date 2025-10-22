@@ -24,26 +24,26 @@ import {
 } from "lucide-react";
 import ProjectCard from "../components/ProjectCard";
 
-import Me from "/public/me.jpg";
-import LunchLeagueLogo from "/public/lunchleague.png";
-import AngularLogo from "/public/logos/angular.png";
-import ReactLogo from "/public/logos/react.png";
-import ReactNativeLogo from "/public/logos/react-native.svg";
-import CssLogo from "/public/logos/css.webp";
-import HtmlLogo from "/public/logos/html.png";
-import JsLogo from "/public/logos/javascript.png";
-import TypescriptLogo from "/public/logos/typescript.svg";
-import NextJsLogo from "/public/logos/nextjs.svg";
-import IonicLogo from "/public/logos/ionic.png";
-import TailwindLogo from "/public/logos/tailwind-css.svg";
-import GitLogo from "/public/logos/git.png";
-import DockerLogo from "/public/logos/docker.png";
-import AppStoreConnectLogo from "/public/logos/app-store-connect.png";
-import FirebaseLogo from "/public/logos/firebase.png";
-import GooglePlayConsoleLogo from "/public/logos/google-play-console.png";
-import FigmaLogo from "/public/logos/figma.png";
-import NodeLogo from "/public/logos/node.png";
-import ShutdownLogo from "/public/shutdown.png";
+import Me from "@/public/me.jpg";
+import LunchLeagueLogo from "@/public/lunchleague.png";
+import AngularLogo from "@/public/logos/angular.png";
+import ReactLogo from "@/public/logos/react.png";
+import ReactNativeLogo from "@/public/logos/react-native.svg";
+import CssLogo from "@/public/logos/css.webp";
+import HtmlLogo from "@/public/logos/html.png";
+import JsLogo from "@/public/logos/javascript.png";
+import TypescriptLogo from "@/public/logos/typescript.svg";
+import NextJsLogo from "@/public/logos/nextjs.svg";
+import IonicLogo from "@/public/logos/ionic.png";
+import TailwindLogo from "@/public/logos/tailwind-css.svg";
+import GitLogo from "@/public/logos/git.png";
+import DockerLogo from "@/public/logos/docker.png";
+import AppStoreConnectLogo from "@/public/logos/app-store-connect.png";
+import FirebaseLogo from "@/public/logos/firebase.png";
+import GooglePlayConsoleLogo from "@/public/logos/google-play-console.png";
+import FigmaLogo from "@/public/logos/figma.png";
+import NodeLogo from "@/public/logos/node.png";
+import ShutdownLogo from "@/public/shutdown.png";
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },

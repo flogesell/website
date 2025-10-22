@@ -1,0 +1,11 @@
+[install]
+# Force bun to be used for all package management
+cache = true
+frozen-lockfile = true
+
+[run]
+# Use bun for running scripts
+bun = true
+
+[install.scopes]
+# Configure any scoped packages if needed
