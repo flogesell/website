@@ -1,11 +1,10 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import Head from "next/head";
-import Script from "next/script";
+import type { Metadata } from 'next';
+import './globals.css';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: "Flo Gesell",
-  description: "IT Consultant & Full Stack Developer",
+  title: 'Flo Gesell',
+  description: 'IT Consultant & Full Stack Developer',
 };
 
 export default function RootLayout({

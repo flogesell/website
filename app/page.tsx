@@ -1,49 +1,34 @@
-"use client";
+'use client';
 
-import type React from "react";
-
-import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { motion, useInView, useAnimation, type Variants } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  Github,
-  Linkedin,
-  Mail,
-  Menu,
-  Twitter,
-  ExternalLink,
-  Instagram,
-} from "lucide-react";
-import ProjectCard from "../components/ProjectCard";
-
-import Me from "@/public/me.jpg";
-import LunchLeagueLogo from "@/public/lunchleague.png";
-import AngularLogo from "@/public/logos/angular.png";
-import ReactLogo from "@/public/logos/react.png";
-import ReactNativeLogo from "@/public/logos/react-native.svg";
-import CssLogo from "@/public/logos/css.webp";
-import HtmlLogo from "@/public/logos/html.png";
-import JsLogo from "@/public/logos/javascript.png";
-import TypescriptLogo from "@/public/logos/typescript.svg";
-import NextJsLogo from "@/public/logos/nextjs.svg";
-import IonicLogo from "@/public/logos/ionic.png";
-import TailwindLogo from "@/public/logos/tailwind-css.svg";
-import GitLogo from "@/public/logos/git.png";
-import DockerLogo from "@/public/logos/docker.png";
-import AppStoreConnectLogo from "@/public/logos/app-store-connect.png";
-import FirebaseLogo from "@/public/logos/firebase.png";
-import GooglePlayConsoleLogo from "@/public/logos/google-play-console.png";
-import FigmaLogo from "@/public/logos/figma.png";
-import NodeLogo from "@/public/logos/node.png";
-import ShutdownLogo from "@/public/shutdown.png";
+import { motion, useAnimation, useInView, type Variants } from 'framer-motion';
+import { ExternalLink, Github, Instagram, Linkedin, Mail, Menu, Twitter } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import type React from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import AngularLogo from '@/public/logos/angular.png';
+import AppStoreConnectLogo from '@/public/logos/app-store-connect.png';
+import CssLogo from '@/public/logos/css.webp';
+import DockerLogo from '@/public/logos/docker.png';
+import FigmaLogo from '@/public/logos/figma.png';
+import FirebaseLogo from '@/public/logos/firebase.png';
+import GitLogo from '@/public/logos/git.png';
+import GooglePlayConsoleLogo from '@/public/logos/google-play-console.png';
+import HtmlLogo from '@/public/logos/html.png';
+import IonicLogo from '@/public/logos/ionic.png';
+import JsLogo from '@/public/logos/javascript.png';
+import NextJsLogo from '@/public/logos/nextjs.svg';
+import NodeLogo from '@/public/logos/node.png';
+import ReactLogo from '@/public/logos/react.png';
+import ReactNativeLogo from '@/public/logos/react-native.svg';
+import TailwindLogo from '@/public/logos/tailwind-css.svg';
+import TypescriptLogo from '@/public/logos/typescript.svg';
+import LunchLeagueLogo from '@/public/lunchleague.png';
+import Me from '@/public/me.jpg';
+import ShutdownLogo from '@/public/shutdown.png';
+import ProjectCard from '../components/ProjectCard';
 
 const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
@@ -64,7 +49,7 @@ const staggerContainer: Variants = {
   },
 };
 
-const cardVariants: Variants = {
+const _cardVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -72,9 +57,9 @@ const cardVariants: Variants = {
     transition: { duration: 0.5 },
   },
   hover: {
-    height: "auto",
+    height: 'auto',
     y: -10,
-    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
     transition: { duration: 0.3 },
   },
 };
@@ -96,7 +81,7 @@ function AnimatedSection({
 
   useEffect(() => {
     if (isInView) {
-      controls.start("visible");
+      controls.start('visible');
     }
   }, [isInView, controls]);
 
@@ -118,10 +103,7 @@ function AnimatedSection({
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false);
 
-  const scrollToSection = (
-    e: React.MouseEvent<HTMLAnchorElement>,
-    id: string
-  ) => {
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
@@ -136,7 +118,7 @@ export default function Home() {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       }, 100);
     }
@@ -170,11 +152,7 @@ export default function Home() {
                 <SheetTitle className="sr-only">Navigation</SheetTitle>
                 <div className="flex flex-col h-full">
                   <div className="flex items-center justify-between mb-6">
-                    <Link
-                      href="/"
-                      className="flex items-center"
-                      onClick={() => setIsOpen(false)}
-                    >
+                    <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
                       <span className="font-bold text-lg">Flo Gesell</span>
                     </Link>
                   </div>
@@ -182,52 +160,43 @@ export default function Home() {
                     <Link
                       href="#about"
                       className="text-lg font-medium py-2 border-b border-border"
-                      onClick={(e) => scrollToSection(e, "about")}
+                      onClick={(e) => scrollToSection(e, 'about')}
                     >
                       About
                     </Link>
                     <Link
                       href="#technologies"
                       className="text-lg font-medium py-2 border-b border-border"
-                      onClick={(e) => scrollToSection(e, "technologies")}
+                      onClick={(e) => scrollToSection(e, 'technologies')}
                     >
                       Technologies
                     </Link>
                     <Link
                       href="#projects"
                       className="text-lg font-medium py-2 border-b border-border"
-                      onClick={(e) => scrollToSection(e, "projects")}
+                      onClick={(e) => scrollToSection(e, 'projects')}
                     >
                       Projects
                     </Link>
                     <Link
                       href="#"
                       className="text-lg font-medium py-2 border-b border-border"
-                      onClick={(e) => scrollToSection(e, "contact")}
+                      onClick={(e) => scrollToSection(e, 'contact')}
                     >
                       Let's Connect
                     </Link>
                   </nav>
                   <div className="mt-auto pt-6">
                     <div className="flex justify-center space-x-4">
-                      <Link
-                        href="#"
-                        className="text-muted-foreground hover:text-foreground"
-                      >
+                      <Link href="#" className="text-muted-foreground hover:text-foreground">
                         <Github className="h-6 w-6" />
                         <span className="sr-only">GitHub</span>
                       </Link>
-                      <Link
-                        href="#"
-                        className="text-muted-foreground hover:text-foreground"
-                      >
+                      <Link href="#" className="text-muted-foreground hover:text-foreground">
                         <Linkedin className="h-6 w-6" />
                         <span className="sr-only">LinkedIn</span>
                       </Link>
-                      <Link
-                        href="#"
-                        className="text-muted-foreground hover:text-foreground"
-                      >
+                      <Link href="#" className="text-muted-foreground hover:text-foreground">
                         <Twitter className="h-6 w-6" />
                         <span className="sr-only">Twitter</span>
                       </Link>
@@ -255,28 +224,28 @@ export default function Home() {
             <nav className="flex items-center space-x-1">
               <Link
                 href="#about"
-                onClick={(e) => scrollToSection(e, "about")}
+                onClick={(e) => scrollToSection(e, 'about')}
                 className="px-4 py-2 text-sm font-medium transition-colors hover:text-primary"
               >
                 About
               </Link>
               <Link
                 href="#technologies"
-                onClick={(e) => scrollToSection(e, "technologies")}
+                onClick={(e) => scrollToSection(e, 'technologies')}
                 className="px-4 py-2 text-sm font-medium transition-colors hover:text-primary"
               >
                 Technologies
               </Link>
               <Link
                 href="#projects"
-                onClick={(e) => scrollToSection(e, "projects")}
+                onClick={(e) => scrollToSection(e, 'projects')}
                 className="px-4 py-2 text-sm font-medium transition-colors hover:text-primary"
               >
                 Projects
               </Link>
               <Link
                 href="#contact"
-                onClick={(e) => scrollToSection(e, "contact")}
+                onClick={(e) => scrollToSection(e, 'contact')}
                 className="px-4 py-2 text-sm font-medium transition-colors hover:text-primary"
               >
                 Let's Connect
@@ -286,10 +255,7 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section
-          id="hero"
-          className="w-full py-12 md:py-24 lg:py-32 xl:py-48 justify-center flex"
-        >
+        <section id="hero" className="w-full py-12 md:py-24 lg:py-32 xl:py-48 justify-center flex">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <motion.div
@@ -303,31 +269,25 @@ export default function Home() {
                     Hi, I'm Florian
                   </h1>
                   <p className="mx-auto lg:mx-0 max-w-[600px] text-muted-foreground md:text-xl">
-                    Full-stack web & app developer specializing in building
-                    exceptional digital experiences.
+                    Full-stack web & app developer specializing in building exceptional digital
+                    experiences.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 justify-center lg:justify-start">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       href="#"
                       data-umami-event="Scroll to Contact"
-                      onClick={(e) => scrollToSection(e, "contact")}
+                      onClick={(e) => scrollToSection(e, 'contact')}
                     >
                       <Button>Let's connect</Button>
                     </Link>
                   </motion.div>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Link
                       href="#"
                       data-umami-event="Scroll to Projects"
-                      onClick={(e) => scrollToSection(e, "projects")}
+                      onClick={(e) => scrollToSection(e, 'projects')}
                     >
                       <Button variant="outline">View my work</Button>
                     </Link>
@@ -341,7 +301,7 @@ export default function Home() {
                 className="mx-auto lg:mx-0 max-w-[400px] lg:max-w-none"
               >
                 <Image
-                  src={Me || "/placeholder.svg"}
+                  src={Me || '/placeholder.svg'}
                   width={550}
                   height={550}
                   alt="Portrait of Flo Gesell"
@@ -362,11 +322,10 @@ export default function Home() {
                 About Me
               </h2>
               <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                I'm a passionate IT-Consultant and Fullstack Developer with a
-                strong focus on creating modern and efficient applications. I
-                love solving complex problems and bringing ideas to life through
-                elegant code. When I'm not coding, you can find me fishing,
-                playing video games, or experimenting with new technologies.
+                I'm a passionate IT-Consultant and Fullstack Developer with a strong focus on
+                creating modern and efficient applications. I love solving complex problems and
+                bringing ideas to life through elegant code. When I'm not coding, you can find me
+                fishing, playing video games, or experimenting with new technologies.
               </p>
             </div>
           </div>
@@ -388,9 +347,7 @@ export default function Home() {
               <div className="w-full space-y-16">
                 {/* Programming Languages */}
                 <div className="space-y-8">
-                  <h3 className="text-xl font-semibold">
-                    Programming Languages
-                  </h3>
+                  <h3 className="text-xl font-semibold">Programming Languages</h3>
                   <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -399,21 +356,21 @@ export default function Home() {
                   >
                     {[
                       {
-                        name: "JavaScript",
+                        name: 'JavaScript',
                         logo: JsLogo,
                       },
                       {
-                        name: "TypeScript",
+                        name: 'TypeScript',
                         logo: TypescriptLogo,
                       },
                       {
-                        name: "HTML",
+                        name: 'HTML',
                         logo: HtmlLogo,
                         disclaimer:
                           "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
                       },
                       {
-                        name: "CSS",
+                        name: 'CSS',
                         logo: CssLogo,
                         disclaimer:
                           "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
@@ -430,7 +387,7 @@ export default function Home() {
                           title={lang.disclaimer}
                         >
                           <Image
-                            src={lang.logo || "/placeholder.svg"}
+                            src={lang.logo || '/placeholder.svg'}
                             width={48}
                             height={48}
                             alt={lang.name}
@@ -444,9 +401,7 @@ export default function Home() {
                             </div>
                           )}
                         </div>
-                        <span className="mt-2 text-xs sm:text-sm font-medium">
-                          {lang.name}
-                        </span>
+                        <span className="mt-2 text-xs sm:text-sm font-medium">{lang.name}</span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -454,9 +409,7 @@ export default function Home() {
 
                 {/* Frameworks & Libraries */}
                 <div className="space-y-8">
-                  <h3 className="text-xl font-semibold">
-                    Frameworks & Libraries
-                  </h3>
+                  <h3 className="text-xl font-semibold">Frameworks & Libraries</h3>
                   <motion.div
                     variants={staggerContainer}
                     initial="hidden"
@@ -465,27 +418,27 @@ export default function Home() {
                   >
                     {[
                       {
-                        name: "React",
+                        name: 'React',
                         logo: ReactLogo,
                       },
                       {
-                        name: "Next.js",
+                        name: 'Next.js',
                         logo: NextJsLogo,
                       },
                       {
-                        name: "React Native",
+                        name: 'React Native',
                         logo: ReactNativeLogo,
                       },
                       {
-                        name: "Angular",
+                        name: 'Angular',
                         logo: AngularLogo,
                       },
                       {
-                        name: "Ionic",
+                        name: 'Ionic',
                         logo: IonicLogo,
                       },
                       {
-                        name: "TailwindCSS",
+                        name: 'TailwindCSS',
                         logo: TailwindLogo,
                       },
                     ].map((framework) => (
@@ -497,7 +450,7 @@ export default function Home() {
                       >
                         <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg border border-border bg-card p-3 sm:p-4 flex items-center justify-center shadow-sm">
                           <Image
-                            src={framework.logo || "/placeholder.svg"}
+                            src={framework.logo || '/placeholder.svg'}
                             width={48}
                             height={48}
                             alt={framework.name}
@@ -523,31 +476,31 @@ export default function Home() {
                   >
                     {[
                       {
-                        name: "Git",
+                        name: 'Git',
                         logo: GitLogo,
                       },
                       {
-                        name: "Docker",
+                        name: 'Docker',
                         logo: DockerLogo,
                       },
                       {
-                        name: "Node.js",
+                        name: 'Node.js',
                         logo: NodeLogo,
                       },
                       {
-                        name: "Firebase",
+                        name: 'Firebase',
                         logo: FirebaseLogo,
                       },
                       {
-                        name: "App Store Connect",
+                        name: 'App Store Connect',
                         logo: AppStoreConnectLogo,
                       },
                       {
-                        name: "Google Play Console",
+                        name: 'Google Play Console',
                         logo: GooglePlayConsoleLogo,
                       },
                       {
-                        name: "Figma",
+                        name: 'Figma',
                         logo: FigmaLogo,
                       },
                     ].map((tool) => (
@@ -559,16 +512,14 @@ export default function Home() {
                       >
                         <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg border border-border bg-card p-3 sm:p-4 flex items-center justify-center shadow-sm">
                           <Image
-                            src={tool.logo || "/placeholder.svg"}
+                            src={tool.logo || '/placeholder.svg'}
                             width={48}
                             height={48}
                             alt={tool.name}
                             className="h-10 w-10 object-contain"
                           />
                         </div>
-                        <span className="mt-2 text-xs sm:text-sm font-medium">
-                          {tool.name}
-                        </span>
+                        <span className="mt-2 text-xs sm:text-sm font-medium">{tool.name}</span>
                       </motion.div>
                     ))}
                   </motion.div>
@@ -602,12 +553,7 @@ export default function Home() {
                   description="Apps to challenge you colleagues in competitive games like Fifa, Mario Kart, and more! Also created the online website with colleagues to manage the leagues and tournaments."
                   image={LunchLeagueLogo}
                   demoText="Website"
-                  technologies={[
-                    "Next.js",
-                    "React Native",
-                    "Tailwind CSS",
-                    "Supabase",
-                  ]}
+                  technologies={['Next.js', 'React Native', 'Tailwind CSS', 'Supabase']}
                   demoLink="https://lunchleague.de/"
                 />
                 <ProjectCard
@@ -615,19 +561,13 @@ export default function Home() {
                   title="supaconfig"
                   description="An easy to use remote config and feature flagging open source tool for your React Native apps."
                   image="/placeholder.svg?height=200&width=400"
-                  technologies={[
-                    "React",
-                    "Next.js",
-                    "Tailwind CSS",
-                    "Supabase",
-                    "shadcn/ui",
-                  ]}
+                  technologies={['React', 'Next.js', 'Tailwind CSS', 'Supabase', 'shadcn/ui']}
                   demoLink="#"
                 />
                 <ProjectCard
                   title="shutdown"
                   description="Shutdown is a visualisation of the effects of everydays life on the climate change goals. The user can shutdown entire emission categories to see the impact on the climate change goals."
-                  technologies={["Vue", "SASS"]}
+                  technologies={['Vue', 'SASS']}
                   image={ShutdownLogo}
                   demoLink="https://flogesell.github.io/shutdown/"
                   codeLink="https://github.com/flogesell/shutdown"
@@ -679,9 +619,8 @@ export default function Home() {
 
                     <p className="text-2xl font-bold mb-4">Happily Employed</p>
                     <p className="text-muted-foreground mb-6">
-                      I'm currently not accepting new opportunities, but I'm
-                      always open to connecting with fellow developers and tech
-                      enthusiasts.
+                      I'm currently not accepting new opportunities, but I'm always open to
+                      connecting with fellow developers and tech enthusiasts.
                     </p>
 
                     <div className="flex flex-wrap gap-3">
@@ -708,31 +647,31 @@ export default function Home() {
                   <div className="grid grid-cols-2 gap-4 max-w-full">
                     {[
                       {
-                        name: "GitHub",
+                        name: 'GitHub',
                         icon: Github,
-                        color: "bg-[#333]/10",
-                        textColor: "text-[#333] dark:text-white",
-                        link: "https://github.com/flogesell",
+                        color: 'bg-[#333]/10',
+                        textColor: 'text-[#333] dark:text-white',
+                        link: 'https://github.com/flogesell',
                       },
                       {
-                        name: "LinkedIn",
+                        name: 'LinkedIn',
                         icon: Linkedin,
-                        color: "bg-[#0077B5]/10",
-                        textColor: "text-[#0077B5] dark:text-[#0077B5]",
-                        link: "https://www.linkedin.com/in/flogesell/",
+                        color: 'bg-[#0077B5]/10',
+                        textColor: 'text-[#0077B5] dark:text-[#0077B5]',
+                        link: 'https://www.linkedin.com/in/flogesell/',
                       },
                       {
-                        name: "Instagram",
+                        name: 'Instagram',
                         icon: Instagram,
-                        color: "bg-[#1DA1F2]/10",
-                        textColor: "text-[#1DA1F2] dark:text-[#1DA1F2]",
-                        link: "https://www.instagram.com/flo_gesell",
+                        color: 'bg-[#1DA1F2]/10',
+                        textColor: 'text-[#1DA1F2] dark:text-[#1DA1F2]',
+                        link: 'https://www.instagram.com/flo_gesell',
                       },
                       {
-                        name: "Email",
+                        name: 'Email',
                         icon: Mail,
-                        color: "bg-primary/10",
-                        textColor: "text-primary",
+                        color: 'bg-primary/10',
+                        textColor: 'text-primary',
                         link: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
                       },
                     ].map((social) => (
@@ -753,9 +692,7 @@ export default function Home() {
                         <social.icon
                           className={`h-8 w-8 sm:h-10 sm:w-10 mb-2 sm:mb-3 ${social.textColor} group-hover:scale-110 transition-transform duration-300`}
                         />
-                        <span
-                          className={`font-medium text-sm sm:text-base ${social.textColor}`}
-                        >
+                        <span className={`font-medium text-sm sm:text-base ${social.textColor}`}>
                           {social.name}
                         </span>
                         <div className="flex items-center mt-1 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground">
@@ -776,8 +713,8 @@ export default function Home() {
                 className="text-center mt-16"
               >
                 <p className="text-muted-foreground">
-                  Thanks for stopping by! Feel free to check out my work or
-                  connect with me on social media.
+                  Thanks for stopping by! Feel free to check out my work or connect with me on
+                  social media.
                 </p>
               </motion.div>
             </div>

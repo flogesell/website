@@ -1,28 +1,23 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { motion, type Variants } from 'framer-motion';
 import {
+  ArrowLeft,
+  Coffee,
+  ExternalLink,
   Github,
+  Globe,
+  Heart,
+  Instagram,
   Linkedin,
   Mail,
-  Twitter,
-  Instagram,
-  ExternalLink,
-  ArrowLeft,
-  Globe,
-  Code,
-  Briefcase,
-  Heart,
-  Coffee,
-} from "lucide-react";
+} from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Me from "@/public/me.jpg";
+import Me from '@/public/me.jpg';
 
-const fadeIn: any = {
+const fadeIn: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -31,7 +26,7 @@ const fadeIn: any = {
   },
 };
 
-const staggerContainer: any = {
+const staggerContainer: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -41,7 +36,7 @@ const staggerContainer: any = {
   },
 };
 
-const linkVariants: any = {
+const linkVariants: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -58,66 +53,66 @@ const linkVariants: any = {
 export default function LinksPage() {
   const links = [
     {
-      title: "Portfolio Website",
-      description: "Check out my full portfolio and projects",
+      title: 'Portfolio Website',
+      description: 'Check out my full portfolio and projects',
       icon: Globe,
-      url: "/",
-      color: "bg-blue-500/10",
-      textColor: "text-blue-600 dark:text-blue-400",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      category: "portfolio",
+      url: '/',
+      color: 'bg-blue-500/10',
+      textColor: 'text-blue-600 dark:text-blue-400',
+      iconColor: 'text-blue-600 dark:text-blue-400',
+      category: 'portfolio',
     },
     {
-      title: "GitHub",
-      description: "Follow my coding journey and open source projects",
+      title: 'GitHub',
+      description: 'Follow my coding journey and open source projects',
       icon: Github,
-      url: "https://github.com/flogesell",
-      color: "bg-gray-500/10",
-      textColor: "text-gray-600 dark:text-gray-400",
-      iconColor: "text-gray-600 dark:text-gray-400",
-      category: "social",
+      url: 'https://github.com/flogesell',
+      color: 'bg-gray-500/10',
+      textColor: 'text-gray-600 dark:text-gray-400',
+      iconColor: 'text-gray-600 dark:text-gray-400',
+      category: 'social',
     },
     {
-      title: "LinkedIn",
-      description: "Connect with me professionally",
+      title: 'LinkedIn',
+      description: 'Connect with me professionally',
       icon: Linkedin,
-      url: "https://www.linkedin.com/in/flogesell/",
-      color: "bg-blue-600/10",
-      textColor: "text-blue-600 dark:text-blue-400",
-      iconColor: "text-blue-600 dark:text-blue-400",
-      category: "social",
+      url: 'https://www.linkedin.com/in/flogesell/',
+      color: 'bg-blue-600/10',
+      textColor: 'text-blue-600 dark:text-blue-400',
+      iconColor: 'text-blue-600 dark:text-blue-400',
+      category: 'social',
     },
     {
-      title: "Instagram",
-      description: "Behind the scenes of my developer life",
+      title: 'Instagram',
+      description: 'Behind the scenes of my developer life',
       icon: Instagram,
-      url: "https://www.instagram.com/flo_gesell",
-      color: "bg-pink-500/10",
-      textColor: "text-pink-600 dark:text-pink-400",
-      iconColor: "text-pink-600 dark:text-pink-400",
-      category: "social",
+      url: 'https://www.instagram.com/flo_gesell',
+      color: 'bg-pink-500/10',
+      textColor: 'text-pink-600 dark:text-pink-400',
+      iconColor: 'text-pink-600 dark:text-pink-400',
+      category: 'social',
     },
     {
-      title: "Email Me",
+      title: 'Email Me',
       description: "Let's chat about opportunities or collaborations",
       icon: Mail,
       url: `mailto:${process.env.NEXT_PUBLIC_EMAIL}`,
-      color: "bg-green-500/10",
-      textColor: "text-green-600 dark:text-green-400",
-      iconColor: "text-green-600 dark:text-green-400",
-      category: "contact",
+      color: 'bg-green-500/10',
+      textColor: 'text-green-600 dark:text-green-400',
+      iconColor: 'text-green-600 dark:text-green-400',
+      category: 'contact',
     },
   ];
 
   const projects = [
     {
-      title: "LunchLeague",
-      description: "Competitive gaming platform for colleagues",
-      url: "https://lunchleague.de/",
+      title: 'LunchLeague',
+      description: 'Competitive gaming platform for colleagues',
+      url: 'https://lunchleague.de/',
       icon: ExternalLink,
-      color: "bg-purple-500/10",
-      textColor: "text-purple-600 dark:text-purple-400",
-      iconColor: "text-purple-600 dark:text-purple-400",
+      color: 'bg-purple-500/10',
+      textColor: 'text-purple-600 dark:text-purple-400',
+      iconColor: 'text-purple-600 dark:text-purple-400',
     },
   ];
 
@@ -160,9 +155,7 @@ export default function LinksPage() {
               </motion.div>
 
               <h1 className="text-3xl font-bold mb-2">Florian Gesell</h1>
-              <p className="text-muted-foreground mb-4">
-                IT Consultant & Full Stack Developer
-              </p>
+              <p className="text-muted-foreground mb-4">IT Consultant & Full Stack Developer</p>
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                 <Heart className="h-4 w-4 text-red-500" />
                 <span>Building digital experiences</span>
@@ -172,37 +165,25 @@ export default function LinksPage() {
 
             {/* Main Links */}
             <motion.div variants={fadeIn} className="space-y-4 mb-8">
-              <h2 className="text-xl font-semibold mb-6 text-center">
-                Connect with me
-              </h2>
-              {links.map((link, index) => (
+              <h2 className="text-xl font-semibold mb-6 text-center">Connect with me</h2>
+              {links.map((link, _index) => (
                 <motion.a
                   key={link.title}
                   href={link.url}
-                  target={link.url.startsWith("http") ? "_blank" : "_self"}
-                  rel={
-                    link.url.startsWith("http")
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
+                  target={link.url.startsWith('http') ? '_blank' : '_self'}
+                  rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                   variants={linkVariants}
                   whileHover="hover"
                   className={`block w-full p-4 rounded-xl border border-border/50 ${link.color} backdrop-blur-sm transition-all duration-300 hover:shadow-lg group`}
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div
-                        className={`p-2 rounded-lg bg-background/50 ${link.iconColor}`}
-                      >
+                      <div className={`p-2 rounded-lg bg-background/50 ${link.iconColor}`}>
                         <link.icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${link.textColor}`}>
-                          {link.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {link.description}
-                        </p>
+                        <h3 className={`font-semibold ${link.textColor}`}>{link.title}</h3>
+                        <p className="text-sm text-muted-foreground">{link.description}</p>
                       </div>
                     </div>
                     <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -213,10 +194,8 @@ export default function LinksPage() {
 
             {/* Projects Section */}
             <motion.div variants={fadeIn} className="space-y-4 mb-8">
-              <h2 className="text-xl font-semibold mb-6 text-center">
-                Featured Projects
-              </h2>
-              {projects.map((project, index) => (
+              <h2 className="text-xl font-semibold mb-6 text-center">Featured Projects</h2>
+              {projects.map((project, _index) => (
                 <motion.a
                   key={project.title}
                   href={project.url}
@@ -228,18 +207,12 @@ export default function LinksPage() {
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div
-                        className={`p-2 rounded-lg bg-background/50 ${project.iconColor}`}
-                      >
+                      <div className={`p-2 rounded-lg bg-background/50 ${project.iconColor}`}>
                         <project.icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <h3 className={`font-semibold ${project.textColor}`}>
-                          {project.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {project.description}
-                        </p>
+                        <h3 className={`font-semibold ${project.textColor}`}>{project.title}</h3>
+                        <p className="text-sm text-muted-foreground">{project.description}</p>
                       </div>
                     </div>
                     <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -259,8 +232,8 @@ export default function LinksPage() {
               </div>
               <p className="text-2xl font-bold mb-2">Happily Employed</p>
               <p className="text-muted-foreground mb-4">
-                Not accepting new opportunities, but always open to connecting
-                with fellow developers!
+                Not accepting new opportunities, but always open to connecting with fellow
+                developers!
               </p>
               <div className="flex flex-wrap justify-center gap-2">
                 <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary">
@@ -281,8 +254,7 @@ export default function LinksPage() {
               className="text-center mt-12 pt-8 border-t border-border/50"
             >
               <p className="text-sm text-muted-foreground">
-                Thanks for visiting! Feel free to connect with me on any
-                platform above.
+                Thanks for visiting! Feel free to connect with me on any platform above.
               </p>
               <div className="flex justify-center gap-4 mt-4">
                 <Link

@@ -1,16 +1,9 @@
-import { ArrowUpRight, Code, Play, PlayIcon } from "lucide-react";
-import React from "react";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-  CardFooter,
-} from "./ui/card";
-import Link from "next/link";
-import Image, { StaticImageData } from "next/image";
-import { Button } from "./ui/button";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from 'framer-motion';
+import { Code, PlayIcon } from 'lucide-react';
+import Image, { type StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { Button } from './ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from './ui/card';
 
 type ProjectCardProps = {
   title: string;
@@ -32,7 +25,7 @@ const cardVariants: Variants = {
   },
   hover: {
     y: -10,
-    boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+    boxShadow: '0 10px 25px rgba(0, 0, 0, 0.1)',
     transition: { duration: 0.3 },
   },
 };
@@ -48,11 +41,7 @@ const ProjectCard = ({
   comingSoon = false,
 }: ProjectCardProps) => {
   return (
-    <motion.div
-      variants={cardVariants}
-      whileHover="hover"
-      className="w-full flex rounded-lg"
-    >
+    <motion.div variants={cardVariants} whileHover="hover" className="w-full flex rounded-lg">
       <Card className="relative flex-1">
         {comingSoon && (
           <div className="absolute inset-0 bg-black/70 flex items-center justify-center z-10 rounded-md">
@@ -89,10 +78,10 @@ const ProjectCard = ({
             <Button variant="outline" size="sm" asChild disabled={comingSoon}>
               <Link
                 data-umami-event={`Open Demo ${title}`}
-                href={comingSoon ? "#" : demoLink}
-                target={comingSoon ? "_self" : "_blank"}
+                href={comingSoon ? '#' : demoLink}
+                target={comingSoon ? '_self' : '_blank'}
               >
-                {demoText || "Demo"} <PlayIcon />
+                {demoText || 'Demo'} <PlayIcon />
               </Link>
             </Button>
           )}
@@ -100,8 +89,8 @@ const ProjectCard = ({
             <Button variant="outline" size="sm" asChild disabled={comingSoon}>
               <Link
                 data-umami-event={`Open Code ${title}`}
-                href={comingSoon ? "#" : codeLink}
-                target={comingSoon ? "_self" : "_blank"}
+                href={comingSoon ? '#' : codeLink}
+                target={comingSoon ? '_self' : '_blank'}
               >
                 Code <Code />
               </Link>

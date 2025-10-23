@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -63,6 +69,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.2.7",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
