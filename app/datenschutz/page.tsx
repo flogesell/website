@@ -229,13 +229,87 @@ export default function Datenschutz() {
 
           <h3 className="text-lg font-medium text-foreground mt-6 mb-3">Umami</h3>
           <p>
-            Zu Analyse der Reichweite meiner Website benutzen wir Umami. Der Schutz Ihrer Daten ist
-            uns wichtig. Deshalb erfasst Umami keine IP Adresse und speichert keine Informationen
-            auf Ihrem Endgerät (z.B. Cookies). Wir verarbeiten Ihre personenbezogenen Nutzungsdaten
-            nur anonymisiert. Ein Rückschluss auf Ihre Person ist uns nicht möglich. Darüber hinaus
-            betreiben wir Umami auf unseren eigenen Servern, weswegen eine Weiterleitung der Daten
-            an Dritte nicht erfolgt. Weitere Informationen finden Sie in der Dokumentation für Umami
-            Analytics unter: https://umami.is .
+            Zur Analyse der Reichweite unserer Website nutzen wir Umami (anonymes, cookieloses
+            Analytics). Dabei setzen wir keine Cookies und speichern keine Informationen auf Ihrem
+            Endgerät. Die IP-Adresse wird nicht gespeichert bzw. nur gekürzt verarbeitet (technisch
+            erforderlich). Die Verarbeitung erfolgt ausschließlich aggregiert/anonymisiert; ein
+            Rückschluss auf Ihre Person ist uns nicht möglich.
+          </p>
+          <p>
+            <strong>Anbieter/Hosting:</strong> Umami (Open-Source) wird von uns selbst betrieben
+            (eigene Server). Eine Weiterleitung der Daten an Dritte erfolgt dabei nicht.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Berechtigtes Interesse gem. Art. 6 Abs. 1 lit. f DSGVO
+            an der statistischen Auswertung und Optimierung unseres Webangebots. Eine Einwilligung
+            nach § 25 Abs. 1 TTDSG ist hierfür nicht erforderlich, sofern keine Cookies gesetzt und
+            keine Informationen im Endgerät gespeichert/ausgelesen werden. Sollte sich das ändern,
+            holen wir vorab Ihre Einwilligung ein.
+          </p>
+          <p>
+            Weitere Informationen finden Sie in der Dokumentation für Umami Analytics unter:
+            https://umami.is .
+          </p>
+
+          <h3 className="text-lg font-medium text-foreground mt-6 mb-3">
+            New Relic (Performance- und Fehler-Monitoring)
+          </h3>
+          <p>
+            Wir nutzen New Relic zur Überwachung der Performance und Stabilität sowie zur
+            Fehleranalyse unserer Website/Anwendung.
+          </p>
+          <p>
+            <strong>Anbieter:</strong> New Relic, Inc. (nach Vertrags-/Account-Setup ggf. New Relic
+            International bzw. eine EMEA-Einheit)
+          </p>
+          <p>
+            <strong>Zwecke:</strong> Performance-Messung, Fehleranalyse (z. B. JavaScript-Fehler),
+            Verfügbarkeits-/Stabilitätsmonitoring, technische Optimierung, ggf. Sicherheits-/
+            Missbrauchserkennung.
+          </p>
+          <p>
+            <strong>Verarbeitete Daten (typisch):</strong>
+            <br />
+            Browser Monitoring: Geräte-/Browserdaten (User-Agent), technische Kennungen/Identifier,
+            Referrer, Seitenaufrufe/Interaktionen, Zeitstempel, Performance-Daten (z. B. Ladezeiten),
+            Fehlermeldungen/Stacktraces, ggf. IP-Adresse (gekürzt/technisch bedingt).
+            <br />
+            Server APM: Request-Metadaten (z. B. Route/Endpoint, Statuscodes, Laufzeiten), Server-/
+            Runtime-Metriken, Fehler/Exceptions (ggf. Stacktraces), ggf. IP-Adresse (technisch
+            bedingt).
+          </p>
+          <p>
+            Wir achten darauf, keine sensiblen Inhalte (z. B. Passwörter oder Inhalte aus
+            Formularfeldern) an New Relic zu übertragen.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong>
+            <br />
+            Browser Monitoring: Einwilligung gem. Art. 6 Abs. 1 lit. a DSGVO i. V. m. § 25 Abs. 1
+            TTDSG/ePrivacy (wird nur nach Zustimmung geladen).
+            <br />
+            Server APM: Berechtigtes Interesse gem. Art. 6 Abs. 1 lit. f DSGVO an dem sicheren und
+            performant betriebenen Betrieb der Anwendung (datensparsame Konfiguration).
+          </p>
+          <p>
+            <strong>Empfänger / Auftragsverarbeitung:</strong> Die Verarbeitung erfolgt im Rahmen
+            einer Auftragsverarbeitung (DPA/AVV) mit New Relic.
+          </p>
+          <p>
+            <strong>Datenverarbeitung in der EU / Drittlandtransfer:</strong> Wir konfigurieren die
+            Verarbeitung nach Möglichkeit in der EU. Soweit im Einzelfall eine Übermittlung in
+            Drittländer (z. B. USA) nicht ausgeschlossen werden kann, erfolgt diese auf Grundlage
+            geeigneter Garantien (z. B. Standardvertragsklauseln) und ggf. weiterer
+            Schutzmaßnahmen.
+          </p>
+          <p>
+            <strong>Speicherdauer:</strong> Die Speicherdauer richtet sich nach den im
+            New-Relic-Account konfigurierten Aufbewahrungsfristen bzw. wir löschen Daten, sobald sie
+            für die genannten Zwecke nicht mehr erforderlich sind.
+          </p>
+          <p>
+            <strong>Widerruf:</strong> Eine erteilte Einwilligung (Browser Monitoring) kann jederzeit
+            mit Wirkung für die Zukunft über die Cookie-/Consent-Einstellungen widerrufen werden.
           </p>
         </section>
       </div>
