@@ -350,6 +350,7 @@ export default function Home() {
                   width={550}
                   height={550}
                   alt="Portrait of Flo Gesell"
+                  priority
                   className="mx-auto aspect-square overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
                 />
               </motion.div>
