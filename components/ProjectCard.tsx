@@ -14,6 +14,7 @@ type ProjectCardProps = {
   codeLink?: string;
   comingSoon?: boolean;
   demoText?: string;
+  logoOnly?: boolean;
 };
 
 const cardVariants: Variants = {
@@ -39,6 +40,7 @@ const ProjectCard = ({
   demoText,
   codeLink,
   comingSoon = false,
+  logoOnly = false,
 }: ProjectCardProps) => {
   return (
     <motion.div variants={cardVariants} whileHover="hover" className="w-full flex rounded-lg">
@@ -64,13 +66,28 @@ const ProjectCard = ({
           </div>
         </CardHeader>
         <CardContent>
-          <Image
-            src={image}
-            width={400}
-            height={200}
-            alt={title}
-            className="rounded-md object-cover w-full"
-          />
+          {logoOnly ? (
+            <div
+              className="flex items-center justify-center rounded-md w-full aspect-square"
+              style={{ backgroundColor: '#12141a' }}
+            >
+              <Image
+                src={image}
+                width={80}
+                height={80}
+                alt={title}
+                className="object-contain h-32 w-32"
+              />
+            </div>
+          ) : (
+            <Image
+              src={image}
+              width={400}
+              height={200}
+              alt={title}
+              className="rounded-md object-cover w-full"
+            />
+          )}
           <p className="mt-4 text-sm text-muted-foreground">{description}</p>
         </CardContent>
         <CardFooter className="flex justify-between">

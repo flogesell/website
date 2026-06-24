@@ -1,7 +1,17 @@
 'use client';
 
 import { motion, useAnimation, useInView, type Variants } from 'framer-motion';
-import { ExternalLink, Github, Instagram, Linkedin, Mail, Menu, Twitter } from 'lucide-react';
+import {
+  ExternalLink,
+  Github,
+  GraduationCap,
+  Instagram,
+  Linkedin,
+  Mail,
+  Menu,
+  Twitter,
+  Users,
+} from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type React from 'react';
@@ -25,6 +35,8 @@ import ReactLogo from '@/public/logos/react.png';
 import ReactNativeLogo from '@/public/logos/react-native.svg';
 import TailwindLogo from '@/public/logos/tailwind-css.svg';
 import TypescriptLogo from '@/public/logos/typescript.svg';
+import FangbuchLogo from '@/public/fangbuch_logo.png';
+import KeepSupabaseAliveLogo from '@/public/keepsubapasealive.svg';
 import LunchLeagueLogo from '@/public/lunchleague.png';
 import Me from '@/public/me.jpg';
 import ShutdownLogo from '@/public/shutdown.png';
@@ -269,8 +281,8 @@ export default function Home() {
                     Hi, I'm Florian
                   </h1>
                   <p className="mx-auto lg:mx-0 max-w-[600px] text-muted-foreground md:text-xl">
-                    Full-stack web & app developer specializing in building exceptional digital
-                    experiences.
+                    IT-Consultant & Fullstack Developer at uniqbit AG – I build web and mobile apps
+                    with React, Next.js and Angular. And I help others do the same.
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-2 justify-center lg:justify-start">
@@ -322,10 +334,18 @@ export default function Home() {
                 About Me
               </h2>
               <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-                I'm a passionate IT-Consultant and Fullstack Developer with a strong focus on
-                creating modern and efficient applications. I love solving complex problems and
-                bringing ideas to life through elegant code. When I'm not coding, you can find me
-                fishing, playing video games, or experimenting with new technologies.
+                I'm an IT-Consultant and Fullstack Developer with 3.5+ years of professional
+                experience at uniqbit AG, where I build web and mobile applications for clients
+                across various industries.
+              </p>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                My stack centers around React, Next.js, Angular and React Native – but what I enjoy
+                most is the full picture: from the first client conversation to a shipped product.
+              </p>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+                Beyond development, I mentor junior developers as a certified trainer (AEVO) and
+                give guest lectures at Technische Hochschule Augsburg on modern web development.
+                Outside of work, you'll find me on the water fishing or rallying through Mario Kart.
               </p>
             </div>
           </div>
@@ -366,14 +386,10 @@ export default function Home() {
                       {
                         name: 'HTML',
                         logo: HtmlLogo,
-                        disclaimer:
-                          "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
                       },
                       {
                         name: 'CSS',
                         logo: CssLogo,
-                        disclaimer:
-                          "I know it's not a programming language, but it looked like I would be some script kiddie without it.",
                       },
                     ].map((lang) => (
                       <motion.div
@@ -382,10 +398,7 @@ export default function Home() {
                         whileHover={{ y: -5 }}
                         className="flex flex-col items-center"
                       >
-                        <div
-                          className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg border border-border bg-card p-3 sm:p-4 flex items-center justify-center shadow-sm relative group"
-                          title={lang.disclaimer}
-                        >
+                        <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-lg border border-border bg-card p-3 sm:p-4 flex items-center justify-center shadow-sm">
                           <Image
                             src={lang.logo || '/placeholder.svg'}
                             width={48}
@@ -393,13 +406,6 @@ export default function Home() {
                             alt={lang.name}
                             className="h-10 w-10 object-contain "
                           />
-
-                          {lang.disclaimer && (
-                            <div className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 text-xs bg-black text-white rounded-md w-48 pointer-events-none z-10">
-                              {lang.disclaimer}
-                              <div className="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-black"></div>
-                            </div>
-                          )}
                         </div>
                         <span className="mt-2 text-xs sm:text-sm font-medium">{lang.name}</span>
                       </motion.div>
@@ -546,32 +552,93 @@ export default function Home() {
                 variants={staggerContainer}
                 initial="hidden"
                 animate="visible"
-                className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full"
+                className="grid gap-6 grid-cols-1 sm:grid-cols-2 w-full"
               >
                 <ProjectCard
                   title="LunchLeague"
-                  description="Apps to challenge you colleagues in competitive games like Fifa, Mario Kart, and more! Also created the online website with colleagues to manage the leagues and tournaments."
+                  description="Apps to challenge your colleagues in competitive games like FIFA, Mario Kart, and more. Includes a website to manage leagues and tournaments."
                   image={LunchLeagueLogo}
                   demoText="Website"
                   technologies={['Next.js', 'React Native', 'Tailwind CSS', 'Supabase']}
                   demoLink="https://lunchleague.de/"
                 />
                 <ProjectCard
-                  comingSoon
-                  title="supaconfig"
-                  description="An easy to use remote config and feature flagging open source tool for your React Native apps."
-                  image="/placeholder.svg?height=200&width=400"
-                  technologies={['React', 'Next.js', 'Tailwind CSS', 'Supabase', 'shadcn/ui']}
-                  demoLink="#"
+                  title="KeepSupabaseAlive"
+                  description="Open source self-hosted dashboard and scheduler that prevents free-tier Supabase projects from pausing due to inactivity. Supports Docker, activity charts, and HTTP Basic Auth."
+                  image={KeepSupabaseAliveLogo}
+                  logoOnly
+                  technologies={['Next.js', 'TypeScript', 'SQLite', 'Docker']}
+                  demoLink="https://github.com/flogesell/keepsupabasealive"
+                  demoText="GitHub"
+                  codeLink="https://github.com/flogesell/keepsupabasealive"
+                />
+                <ProjectCard
+                  title="Fangbuch"
+                  description="A mobile app for anglers to log catches, track fishing spots, and keep a detailed fishing diary. Currently in development."
+                  image={FangbuchLogo}
+                  technologies={['React Native', 'Expo', 'Supabase', 'TypeScript']}
+                  demoLink="https://fangbuch.flogesell.de/"
+                  demoText="Website"
                 />
                 <ProjectCard
                   title="shutdown"
-                  description="Shutdown is a visualisation of the effects of everydays life on the climate change goals. The user can shutdown entire emission categories to see the impact on the climate change goals."
+                  description="A visualisation of the effects of everyday life on climate change goals. Shut down entire emission categories and see the real impact."
                   technologies={['Vue', 'SASS']}
                   image={ShutdownLogo}
                   demoLink="https://flogesell.github.io/shutdown/"
                   codeLink="https://github.com/flogesell/shutdown"
                 />
+              </motion.div>
+            </div>
+          </div>
+        </AnimatedSection>
+
+        <AnimatedSection
+          id="beyond-code"
+          className="w-full py-12 md:py-24 lg:py-32 bg-background justify-center flex"
+        >
+          <div className="container px-4 md:px-6">
+            <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+              <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-5xl">
+                Beyond Code
+              </h2>
+              <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7 mb-8">
+                Development is only part of what I do
+              </p>
+              <motion.div
+                variants={staggerContainer}
+                initial="hidden"
+                animate="visible"
+                className="grid gap-6 grid-cols-1 sm:grid-cols-2 w-full max-w-2xl"
+              >
+                <motion.div
+                  variants={fadeIn}
+                  className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card p-6 shadow-sm"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                    <GraduationCap className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="space-y-1 text-center">
+                    <h3 className="font-semibold">Guest Lecturer</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Teaching modern web development at Technische Hochschule Augsburg
+                    </p>
+                  </div>
+                </motion.div>
+                <motion.div
+                  variants={fadeIn}
+                  className="flex flex-col items-center gap-4 rounded-xl border border-border bg-card p-6 shadow-sm"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+                    <Users className="h-6 w-6 text-primary" />
+                  </div>
+                  <div className="space-y-1 text-center">
+                    <h3 className="font-semibold">Certified Trainer (AEVO)</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Mentoring junior developers at uniqbit AG
+                    </p>
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>
