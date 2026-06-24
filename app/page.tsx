@@ -136,7 +136,40 @@ export default function Home() {
     }
   };
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Florian Gesell',
+    alternateName: 'Flo Gesell',
+    url: 'https://flogesell.de',
+    image: 'https://flogesell.de/me.jpg',
+    jobTitle: 'IT-Consultant & Fullstack Developer',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'uniqbit AG',
+    },
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Technische Hochschule Augsburg',
+    },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Augsburg',
+      addressCountry: 'DE',
+    },
+    knowsAbout: ['React', 'Next.js', 'Angular', 'React Native', 'TypeScript', 'Web Development', 'Mobile Development'],
+    sameAs: [
+      'https://github.com/flogesell',
+      'https://linkedin.com/in/flogesell',
+    ],
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="flex min-h-screen flex-col overflow-x-hidden">
       <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 justify-center flex">
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
@@ -812,5 +845,6 @@ export default function Home() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
